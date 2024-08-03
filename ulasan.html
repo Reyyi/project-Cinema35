@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulasan Produk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .review-popup-content {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center;
+        }
+
+        .review-popup-content img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .review-popup-content h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .rating {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .rating span {
+            cursor: pointer;
+            font-size: 24px;
+            color: #ccc; /* Default color for stars */
+            transition: color 0.2s;
+        }
+
+        .rating span.selected {
+            color: #FFD700; /* Gold color for selected stars */
+        }
+
+        .review-popup-content input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 20px 0;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .post-btn {
+            background-color: #FFDDC1;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .post-btn:hover {
+            background-color: #FFAB91;
+            color: #fff;
+        }
+
+        .review-date {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="review-popup-content">
+        <img src="default-profile.png" alt="Profile Picture" id="profilePicture">
+        <h3 id="username">nama pengguna</h3>
+        <p>rating</p>
+        <div class="rating">
+            <span data-value="1">⭐️</span>
+            <span data-value="2">⭐️</span>
+            <span data-value="3">⭐️</span>
+            <span data-value="4">⭐️</span>
+            <span data-value="5">⭐️</span>
+        </div>
+        <input type="text" placeholder="masukkan ulasan anda">
+        <button class="post-btn">POST</button>
+        <div class="review-date">30/03/2024</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const stars = document.querySelectorAll('.rating span');
+            stars.forEach(star => {
+                star.addEventListener('click', function () {
+                    const rating = this.getAttribute('data-value');
+                    stars.forEach(s => {
+                        if (s.getAttribute('data-value') <= rating) {
+                            s.classList.add('selected');
+                        } else {
+                            s.classList.remove('selected');
+                        }
+                    });
+                });
+            });
+
+            // Simulate user profile data
+            const userProfile = {
+                name: 'free fire',
+                profilePicture: 'default-profile.png' // URL to the user's profile picture
+            };
+
+            document.getElementById('username').textContent = userProfile.name;
+            document.getElementById('profilePicture').src = userProfile.profilePicture;
+        });
+    </script>
+</body>
+</html>

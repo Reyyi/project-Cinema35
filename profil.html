@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Cinema35 Cafe</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-picture {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-picture input[type="file"] {
+            display: none;
+        }
+
+        .edit-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #FFDDC1;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .profile-info {
+            margin-top: 20px;
+        }
+
+        .profile-info input[type="text"],
+        .profile-info input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .edit-btn,
+        .save-btn {
+            background-color: #FFDDC1;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .edit-btn:hover,
+        .save-btn:hover {
+            background-color: #FFAB91;
+            color: #fff;
+        }
+
+        .save-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cinema35</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="belanja.html">Belanja</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                <a href="register.html" class="sign-up">Sign Up</a>
+                <a href="profil.html" class="profile-icon">
+                    <img src="default-profile.png" alt="Profile" id="profileImage">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="profile-picture">
+            <img src="default-profile.png" alt="Foto Profil" id="profileImage">
+            <label for="profileImageInput" class="edit-icon">✎</label>
+            <input type="file" id="profileImageInput" accept="image/*" onchange="loadProfileImage(event)">
+        </div>
+        
+        <div class="profile-info">
+            <input type="text" id="name" value="Nama Lengkap" disabled>
+            <input type="email" id="email" value="email@example.com" disabled>
+            <input type="text" id="class" value="Kelas" disabled>
+            <input type="text" id="room" value="Ruang" disabled>
+            <input type="text" id="phone" value="Nomor HP" disabled>
+        </div>
+
+        <button class="edit-btn" onclick="editProfile()">Edit Profil</button>
+        <button class="save-btn" onclick="saveProfile()">Simpan Perubahan</button>
+    </div>
+
+    <script>
+        function loadProfileImage(event) {
+            const image = document.getElementById('profileImage');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        function editProfile() {
+            document.getElementById('name').disabled = false;
+            document.getElementById('email').disabled = false;
+            document.getElementById('class').disabled = false;
+            document.getElementById('room').disabled = false;
+            document.getElementById('phone').disabled = false;
+
+            document.querySelector('.edit-btn').style.display = 'none';
+            document.querySelector('.save-btn').style.display = 'inline-block';
+        }
+
+        function saveProfile() {
+            document.getElementById('name').disabled = true;
+            document.getElementById('email').disabled = true;
+            document.getElementById('class').disabled = true;
+            document.getElementById('room').disabled = true;
+            document.getElementById('phone').disabled = true;
+
+            document.querySelector('.edit-btn').style.display = 'inline-block';
+            document.querySelector('.save-btn').style.display = 'none';
+
+            alert('Perubahan profil berhasil disimpan!');
+        }
+
+        
+    </script>
+</body>
+</html>

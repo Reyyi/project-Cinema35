@@ -1,0 +1,733 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Menjadikan navbar tetap di posisi atas saat scroll */
+    top: 0; /* Mengatur jarak dari atas halaman */
+    left: 0; /* Mengatur jarak dari sisi kiri halaman */
+    width: 100%; /* Mengatur lebar navbar agar penuh */
+    z-index: 100; /* Menjamin navbar berada di atas elemen lainnya */
+}
+
+/* Responsif untuk layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    .menu-item {
+        max-width: 100%;
+        margin: 5px;
+    }
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px; /* Menambahkan padding di kiri dan kanan */
+}
+
+nav .sign-up {
+    margin-left: -20px; /* Sesuaikan nilai sesuai kebutuhan */
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    
+}
+
+nav ul li a:hover {
+    
+    color: #FFAB91;
+}
+
+nav ul li a.active {
+    font-weight: bold; /* Menebalkan teks untuk link aktif */
+    border-bottom: 2px solid #FFAB91; /* Garis bawah berwarna sama dengan teks untuk menunjukkan halaman aktif */
+}
+
+nav ul li a.disabled {
+    pointer-events: none; /* Menonaktifkan klik pada link */
+    cursor: default; /* Mengubah kursor menjadi default */
+    border-bottom: none; /* Menghilangkan garis bawah */
+    border-bottom: 2px solid #FFAB91;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 35px; /* Jarak antar tombol */
+}
+
+.login,
+.sign-up {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.auth-buttons a {
+    display: inline-block;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.login {
+    background-color: #FFDDC1;
+    color: #333;
+}
+
+.login:hover {
+    background-color: #FFAB91;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.sign-up {
+    background-color: #FFDDC1;
+    color: #333;
+    align-content: center;
+}
+
+.sign-up:hover {
+    background-color: #FFAB91;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #FFF7E6;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: #333;
+}
+
+.hero-text p {
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.book-now {
+    background-color: #FFDDC1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-now:hover {
+    background-color: #FFAB91; /* Warna latar belakang saat hover */
+    transform: scale(1.05); /* Memperbesar ukuran tombol saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+    color: #fff; /* Warna teks saat hover */
+    border-radius: 8px; /* Sudut melengkung tetap saat hover */
+}
+
+.hero-image {
+    max-width: 40%;
+    position: relative;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.hero-image img {
+    width: 90%;
+    
+}
+
+.ellipse-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px; /* Adjust as needed */
+    height: auto;
+    z-index: 1;
+    transform: translate(30%, -10%); /* Adjust as needed */
+}
+
+.ellipse-background img {
+    width: 100%;
+    height: auto;
+}
+
+/* New Styles */
+.available-items {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: white;
+}
+.available-items h2 {
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.9); /* Offset x, offset y, blur radius, warna */
+}
+
+.item {
+    position: relative;
+    width: 48%;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.item-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+.item-text a {
+    background-color: #FFDDC1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.item-button {
+    background-color: #FFDDC1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.item-button:hover {
+    background-color: #FFAB91; /* Warna latar belakang saat hover */
+    transform: scale(1.05); /* Memperbesar ukuran tombol saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+    color: #fff; /* Warna teks saat hover */
+    border-radius: 8px; /* Sudut melengkung tetap saat hover */
+}
+
+.recommendations {
+    padding: 50px;
+    background-color: #FFF7E6;
+    text-align: center;
+}
+
+.line1 {
+    width: 5px;
+    height: 40px;
+    background-color: orange;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+}
+
+.recommendation-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    
+}
+
+.recommendation-header h2 {
+    font-size: 32px;
+    color: #333;
+    margin-left: 20px; /* Sesuaikan jarak agar sesuai dengan margin dan padding */
+    padding-left: 20px;
+    position: relative;
+}
+
+.recommendation-header p {
+    margin: 0;
+    font-size: 30px;
+    color: #ff7d03;
+    position: relative;
+    left: 1%;
+  
+}
+
+
+
+.icons {
+    display: flex;
+    gap: 15px;
+    padding-left: 55%;
+   
+
+}
+
+.icons i {
+    font-size: 25px;
+    color: #666;
+    justify-content: right;
+    text-align: right;
+}
+
+.recommendation-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom dengan lebar yang sama */
+    gap: 20px; /* Jarak antar kartu */
+    padding-top: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #FFDDC1;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Memperbesar ukuran tombol saat hover */
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-text h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card-text p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+.view-more-container {
+    grid-column: span 4; /* Memastikan tombol mengambil satu baris penuh */
+    text-align: center; /* Menyelaraskan tombol di tengah */
+    padding-top: 20px; /* Jarak di atas tombol */
+}
+
+.view-more {
+    background-color: #FFDDC1;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.view-more:hover {
+    background-color: #FFAB91;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+/* Styles for menu statistics section */
+.menu-stats {
+    padding: 50px 20px;
+    background-color: #FFF7E6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-stats h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.menu-categories {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.menu-category {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 250px; /* Set a fixed width */
+    transition: transform 0.3s ease;
+}
+
+.menu-category i {
+    font-size: 50px;
+    color: #FFAB91;
+}
+
+.menu-category h3 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.menu-category p {
+    font-size: 18px;
+    color: #666;
+}
+
+.menu-category:hover {
+    transform: scale(1.05);
+}
+
+.service-process {
+    padding: 50px 20px;
+    background-color: #FFF7E6;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+
+.service-process {
+    padding: 50px 20px;
+    background-color: #FFF7E6;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.line {
+    width: 5px;
+    height: 40px;
+    background-color: orange;
+    margin-right: 10px;
+    position: absolute;
+    left: 2%;
+    border-radius: 3px;
+}
+
+.header-container h2 {
+    font-size: 32px;
+    color: #333;
+    margin-left: 20px; /* Sesuaikan jarak agar sesuai dengan margin dan padding */
+    padding-left: 20px;
+    left: 2%;
+    position: relative;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.process-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.arrow img {
+    width: 20px;
+    height: 20px;
+}
+
+.process-text p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+
+/* Lokasi Kafe */
+.location {
+    padding: 50px 20px;
+    background-color: #FFF7E6;
+    text-align: center;
+}
+
+.location h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.location h4 {
+    color: #ff7d03;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+}
+
+.map-container img {
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Footer */
+footer {
+    background-color: #FFDDC1;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content a {
+    color: #333333;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #FFAB91;
+}
+
+.footer-content i {
+    margin-right: 10px;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.globe-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.product-image {
+    width: 30%;
+}
+.product-info {
+    width: 65%;
+}
+.product-info h2 {
+    margin-top: 0;
+}
+.product-info p {
+    margin: 5px 0;
+}
+.quantity-selector {
+    display: flex;
+    align-items: center;
+}
+.quantity-selector button {
+    background-color: #FFDDC1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.quantity-selector button:hover {
+    background-color: #FFAB91;
+    color: #fff;
+}
+.quantity-selector span {
+    margin: 0 10px;
+    font-size: 16px;
+}
+.edit-btn {
+    background-color: #FFDDC1;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+.edit-btn:hover {
+    background-color: #FFAB91;
+    color: #fff;
+}
+.note-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.payment-method {
+    margin: 20px 0;
+}
+.payment-method input {
+    margin-right: 10px;
+}
+.total-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.order-btn {
+    width: 100%;
+    background-color: #FFDDC1;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.order-btn:hover {
+    background-color: #FFAB91;
+    color: #fff;
+}
+
+.profile-icon img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}

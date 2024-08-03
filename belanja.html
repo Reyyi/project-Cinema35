@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belanja - Cinema35 Cafe</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+    
+
+        .container {
+            margin: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .tabs::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: -1;
+        }
+
+        .tabs button {
+            background-color: #FFDDC1;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px 25px 0 0;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .tabs button:hover,
+        .tabs button.active {
+            background-color: #FFAB91;
+            color: #fff;
+            border-bottom: 2px solid #FFAB91;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .order-item img {
+            width: 100px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .order-details {
+            flex: 1;
+        }
+
+        .order-details h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .order-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .order-status {
+            text-align: center;
+        }
+
+        .order-status button {
+            background-color: #FFDDC1;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .order-status button:hover {
+            background-color: #FFAB91;
+            color: #fff;
+        }
+
+        .order-history-item {
+            display: flex;
+            align-items: center;
+            background-color: #FFE0B2;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .order-history-item img {
+            width: 100px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .order-history-details {
+            flex: 1;
+        }
+
+        .order-history-details h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .order-history-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .order-date {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .order-review {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: #FF7D03;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cinema35</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="belanja.html" class="active disabled" aria-disabled="true">Belanja</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                
+            <a href="register.html" class="sign-up">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="tabs">
+            <button class="tablink active" onclick="openTab(event, 'pesanan')">Pesanan</button>
+            <button class="tablink" onclick="openTab(event, 'riwayat')">Riwayat Pemesanan</button>
+        </div>
+
+        <div id="pesanan" class="tab-content active">
+            <h2>Hari ini</h2>
+            <div class="order-item">
+                <img src="fries.png" alt="Chicken Nuggets">
+                <div class="order-details">
+                    <h3>Chicken Nuggets</h3>
+                    <p>⏱ 30 Menit</p>
+                    <p>4 item</p>
+                    <p>Rp 48.000</p>
+                </div>
+                <div class="order-status">
+                    <button>Dalam Proses</button>
+                </div>
+            </div>
+
+            <div class="order-item">
+                <img src="menu-chicken-katsu-mayo.png" alt="katsu maayo">
+                <div class="order-details">
+                    <h3>Chicken Katsu Mayo</h3>
+                    <p>⏱ 30 Menit</p>
+                    <p>1 item</p>
+                    <p>Rp 20.000</p>
+                </div>
+                <div class="order-status">
+                    <button>Dalam Proses</button>
+                </div>
+            </div>
+
+            <div class="order-item">
+                <img src="kopi.png" alt="COffe">
+                <div class="order-details">
+                    <h3>Coffe</h3>
+                    <p>⏱ 5 Menit</p>
+                    <p>1 item</p>
+                    <p>Rp 5.000</p>
+                </div>
+                <div class="order-status">
+                    <button>Dalam Proses</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="riwayat" class="tab-content">
+            <div class="order-history-item">
+                <img src="fries.png" alt="Chicken Nuggets">
+                <div class="order-history-details">
+                    <h3>Chicken Nuggets</h3>
+                    <p>4x</p>
+                    <p>Rp 48.000</p>
+                </div>
+                <div class="order-date">30/03/2024</div>
+                <div class="order-review">Ulasan</div>
+            </div>
+
+            <div class="order-history-item">
+                <img src="fries.png" alt="Chicken Nuggets">
+                <div class="order-history-details">
+                    <h3>Chicken Nuggets</h3>
+                    <p>2x</p>
+                    <p>Rp 24.000</p>
+                </div>
+                <div class="order-date">20/02/2024</div>
+                <div class="order-review">Ulasan</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Set default tab to Pesanan
+        document.getElementById("pesanan").style.display = "block";
+    </script>
+</body>
+</html>

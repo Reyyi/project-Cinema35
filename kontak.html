@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Cafe Cinema 35</title>
+    <style>
+        /* Styles for the contact page */
+        html, body {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Menjadikan navbar tetap di posisi atas saat scroll */
+    top: 0; /* Mengatur jarak dari atas halaman */
+    left: 0; /* Mengatur jarak dari sisi kiri halaman */
+    width: 100%; /* Mengatur lebar navbar agar penuh */
+    z-index: 100; /* Menjamin navbar berada di atas elemen lainnya */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px; /* Menambahkan padding di kiri dan kanan */
+}
+
+nav .sign-up {
+    margin-left: -20px; /* Sesuaikan nilai sesuai kebutuhan */
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    
+}
+
+nav ul li a:hover {
+    
+    color: #FFAB91;
+}
+
+nav ul li a.active {
+    font-weight: bold; /* Menebalkan teks untuk link aktif */
+    border-bottom: 2px solid #FFAB91; /* Garis bawah berwarna sama dengan teks untuk menunjukkan halaman aktif */
+}
+
+nav ul li a.disabled {
+    pointer-events: none; /* Menonaktifkan klik pada link */
+    cursor: default; /* Mengubah kursor menjadi default */
+    border-bottom: none; /* Menghilangkan garis bawah */
+    border-bottom: 2px solid #FFAB91;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 35px; /* Jarak antar tombol */
+}
+
+.login,
+.sign-up {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.auth-buttons a {
+    display: inline-block;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.login {
+    background-color: #FFDDC1;
+    color: #333;
+}
+
+.login:hover {
+    background-color: #FFAB91;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.sign-up {
+    background-color: #FFDDC1;
+    color: #333;
+}
+
+.sign-up:hover {
+    background-color: #FFAB91;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+        body {
+            background: linear-gradient(135deg, #FFAB91, #FFC3A0, #FF677D);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(1, 179, 249, 0.3);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .contact-container::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(224, 27, 27, 0.3);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .contact-container h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form label {
+            font-weight: 500;
+            color: #000000;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 12px 20px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            background: linear-gradient(to right, #545454 50%, #FFF 50%) no-repeat;
+            background-size: 200% 100%;
+            transition: background-position 0.3s ease, border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #676261;
+            outline: none;
+            background-position: 100% 0;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-submit {
+            background-color: #7676bf;
+            border: none;
+            padding: 12px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-submit:hover {
+            background-color: #FFAB91;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+    .menu-item {
+        max-width: 100%;
+        margin: 5px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Cinema35</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="belanja.html">Belanja</a></li>
+                <li><a href="kontak.html" class="active disabled" aria-disabled="true">Kontak</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+               
+            <a href="register.html" class="sign-up">Sign Up</a>
+            </div>
+        </nav>
+        
+    </header>
+
+    <div class="main-content">
+        <div class="contact-container">
+            <h1>Kontak Kami</h1>
+            <form class="contact-form" action="submit_form.php" method="post">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="contact-submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Cafe Cinema 35. All rights reserved.</p>
+    </footer>
+</body>
+</html>
