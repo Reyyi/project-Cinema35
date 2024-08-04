@@ -6,14 +6,15 @@
     <title>Menu - Cafe Cinema35</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Header Styles */
-        /* Media Queries untuk Tablet dan Mobile */
-        @media (max-width: 768px) {
-            .menu-item {
-                max-width: 100%;
-                margin: 5px;
-            }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
         }
+
+       
         .menu-section {
             padding: 50px;
             background-color: #FFF7E6;
@@ -23,15 +24,15 @@
         .menu-categories {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 90px;
             margin-bottom: 20px;
         }
 
         .category-btn {
             background-color: #FFDDC1;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 10px 90px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
@@ -40,7 +41,7 @@
         }
 
         .category-btn.active, .category-btn:hover {
-            background-color: #FFAB91;
+            background-color: #864430;
             color: #fff;
         }
 
@@ -49,7 +50,10 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
+            
         }
+
+        
 
         .menu-item {
             background-color: white;
@@ -60,7 +64,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 200px;
+            width: 150px;
         }
 
         .menu-item:hover {
@@ -70,6 +74,10 @@
         .menu-item img {
             width: 100%;
             border-radius: 10px;
+        }
+
+        .hidden {
+            display: none !important;
         }
 
         .popup {
@@ -178,71 +186,6 @@
             color: #fff;
         }
 
-        .category-btn.active {
-            background-color: rgb(255, 0, 0);
-            color: rgb(237, 237, 237);
-        }
-
-        .menu-categories {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 2px solid #f06e11; /* Garis bawah */
-            padding: 10px 0;
-        }
-
-        .category-btn {
-            flex: 1;
-            text-align: center;
-            border: 1px solid #ddd; /* Garis batas */
-            background-color: #f5f5f5;
-            padding: 10px;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, border-color 0.3s;
-            font-weight: bold;
-        }
-
-        .category-btn.active {
-            background-color: #ed896d;
-            color: #fff;
-            border-color: #333;
-        }
-
-        .category-btn:hover {
-            background-color: #994242;
-        }
-
-        .menu-item {
-            background-color: white;
-            border: 1px solid #FFDDC1;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-            grid-template-columns: repeat(4, 1fr); /* 4 kolom dengan lebar yang sama */
-            gap: 20px; /* Jarak antar kartu */
-        }
-
-        .menu-item:hover {
-            transform: scale(1.05); /* Memperbesar ukuran tombol saat hover */
-        }
-
-        .menu-item img {
-            width:100%;
-            border-radius: 10px;
-        }
-
-        .menu-item-info h3 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .menu-item-info p {
-            font-size: 14px;
-            color: #666;
-        }
-
         .reviews {
             margin-top: 20px;
         }
@@ -256,93 +199,56 @@
             margin-bottom: 10px;
         }
 
-        .reviews p {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .review-btn {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
+        .review-item {
+            background-color: #FFF7E6;
             padding: 10px;
-            cursor: pointer;
-            margin-top: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
-        .review-btn:hover {
-            background-color: #0056b3;
+        .add-review {
+            margin-top: 20px;
         }
 
-        .contact-info a, .social-media a {
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
+        .add-review textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
         }
 
-        footer {
+        .add-review input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .submit-review-btn {
             background-color: #FFDDC1;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-content a {
-            color: #333333;
-            font-size: 16px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-content a:hover {
-            color: #FFAB91;
-        }
-
-        .footer-content i {
-            margin-right: 10px;
-        }
-
-        .menu-categories {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .category-btn {
-            background: #f1f1f1;
             border: none;
             padding: 10px 20px;
-            margin: 0 5px;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
+            color: black;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
         }
 
-        .category-btn.active {
-            background: #333;
+        .submit-review-btn:hover {
+            background-color: #FFAB91;
             color: #fff;
-        }
-
-        .menu-item-info {
-            text-align: center;
-        }
-
-        /* Menyembunyikan item yang tidak relevan */
-        .hidden {
-            display: none;
         }
 
         .profile-icon img {
-            width: 40px;
-            height: 40px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
         }
+
     </style>
 </head>
 <body>
@@ -355,7 +261,6 @@
                 <li><a href="belanja.html">Belanja</a></li>
                 <li><a href="kontak.html">Kontak</a></li>
             </ul>
-
             <div class="auth-buttons">
                 <a href="register.html" class="sign-up">Sign Up</a>
                 <a href="profil.html" class="profile-icon">
@@ -372,106 +277,103 @@
             <button class="category-btn" onclick="filterMenu('drinks')">Minuman</button>
         </div>
         <div class="menu-items">
-            <!-- Kategori: Semua, Makanan, Minuman -->
             <div class="menu-item food" onclick="openPopup('item1')">
-                <img src="fries.png" alt="Kentang Goreng">
+                <img src="images/fries.png" alt="Kentang Goreng">
                 <div class="menu-item-info">
                     <h3>Kentang Goreng</h3>
                     <p>Rp 12.000</p>
                     <p>⭐ 4.5 (150)</p>
                 </div>
             </div>
-    
+
             <div class="menu-item food" onclick="openPopup('item2')">
-                <img src="menu-kopi-roti.png" alt="Coffee Breakfast">
-                <div class="menu-item-info">
-                    <h3>Coffee Breakfast</h3>
-                    <p>Rp 10.000</p>
-                    <p>⭐ 4.9 (110)</p>
-                </div>
-            </div>
-    
-            <div class="menu-item drinks" onclick="openPopup('item3')">
-                <img src="kopi.png" alt="Coffee">
-                <div class="menu-item-info">
-                    <h3>Coffee</h3>
-                    <p>Rp 5.000</p>
-                    <p>⭐ 4.5 (100)</p>
-                </div>
-            </div>
-    
-            <div class="menu-item food" onclick="openPopup('item4')">
-                <img src="menu-frozen-dessert.png" alt="Frozen Dessert">
-                <div class="menu-item-info">
-                    <h3>Frozen Dessert</h3>
-                    <p>Rp 15.000</p>
-                    <p>⭐ 4.7 (150)</p>
-                </div>
-            </div>
-    
-            <div class="menu-item food" onclick="openPopup('item5')">
-                <img src="menu-chicken-katsu-mayo.png" alt="Chicken Katsu Mayo">
+                <img src="images/menu-chicken-katsu-mayo.png" alt="Chicken Katsu Mayo">
                 <div class="menu-item-info">
                     <h3>Chicken Katsu Mayo</h3>
                     <p>Rp 20.000</p>
-                    <p>⭐ 4.8 (200)</p>
+                    <p>⭐ 4.4 (150)</p>
                 </div>
             </div>
-    
-            <div class="menu-item drinks" onclick="openPopup('item6')">
-                <img src="menu-lemonade-coffe.png" alt="Lemonade Coffee">
+
+            <div class="menu-item food" onclick="openPopup('item3')">
+                <img src="images/menu-kopi-roti.png" alt="Coffee Breakfast">
                 <div class="menu-item-info">
-                    <h3>Lemonade Coffee</h3>
-                    <p>Rp 7.000</p>
+                    <h3>Coffee Breakfast</h3>
+                    <p>Rp 12.000</p>
+                    <p>⭐ 4.0 (150)</p>
+                </div>
+            </div>
+
+            <div class="menu-item drinks" onclick="openPopup('item4')">
+                <img src="images/kopi.png" alt="Kopi">
+                <div class="menu-item-info">
+                    <h3>Coffee</h3>
+                    <p>Rp 8.000</p>
                     <p>⭐ 4.5 (150)</p>
                 </div>
             </div>
 
-            <div class="menu-item food" onclick="openPopup('item7')">
-                <img src="yamin-ayam.png" alt="yamin-ayam">
+            <div class="menu-item food" onclick="openPopup('item5')">
+                <img src="images/menu-frozen-dessert.png" alt="Frozen Dessert">
                 <div class="menu-item-info">
-                    <h3>yamin-ayam</h3>
+                    <h3>Frozen Dessert</h3>
+                    <p>Rp 15.000</p>
+                    <p>⭐ 4.5 (150)</p>
+                </div>
+            </div>
+
+            <div class="menu-item drinks" onclick="openPopup('item6')">
+                <img src="images/menu-lemonade-coffe.png" alt="Lemonade Coffee">
+                <div class="menu-item-info">
+                    <h3>Lemonade Coffee</h3>
                     <p>Rp 12.000</p>
+                    <p>⭐ 4.5 (150)</p>
+                </div>
+            </div>
+
+            <div class="menu-item drinks" onclick="openPopup('item7')">
+                <img src="images/gaxlaxy mocktail.png" alt="Galaxy Mocktail">
+                <div class="menu-item-info">
+                    <h3>Galaxy Mocktail</h3>
+                    <p>Rp 13.000</p>
                     <p>⭐ 4.5 (150)</p>
                 </div>
             </div>
 
             <div class="menu-item drinks" onclick="openPopup('item8')">
-                <img src="menu-lemonade-coffe.png" alt="Lemonade Coffee">
+                <img src="images/milk chocolate.png" alt="Mill Chocolate">
                 <div class="menu-item-info">
-                    <h3>Lemonade Coffee</h3>
-                    <p>Rp 12.000</p>
+                    <h3>Milk Chocolate</h3>
+                    <p>Rp 7.000</p>
                     <p>⭐ 4.5 (150)</p>
                 </div>
             </div>
 
-            <div class="menu-item drinks" onclick="openPopup('item9')">
-                <img src="menu-lemonade-coffe.png" alt="Lemonade Coffee">
+            <div class="menu-item drinks" onclick="openPopup('item8')">
+                <img src="images/milk chocolate.png" alt="Mill Chocolate">
                 <div class="menu-item-info">
-                    <h3>Lemonade Coffee</h3>
-                    <p>Rp 12.000</p>
+                    <h3>Milk Chocolate</h3>
+                    <p>Rp 7.000</p>
                     <p>⭐ 4.5 (150)</p>
                 </div>
             </div>
 
-            <div class="menu-item drinks" onclick="openPopup('item10')">
-                <img src="menu-lemonade-coffe.png" alt="Lemonade Coffee">
+            <div class="menu-item drinks" onclick="openPopup('item8')">
+                <img src="images/milk chocolate.png" alt="Mill Chocolate">
                 <div class="menu-item-info">
-                    <h3>Lemonade Coffee</h3>
-                    <p>Rp 12.000</p>
+                    <h3>Milk Chocolate</h3>
+                    <p>Rp 7.000</p>
                     <p>⭐ 4.5 (150)</p>
                 </div>
             </div>
-    
-            <!-- Tambahkan item lainnya sesuai kebutuhan -->
         </div>
     </section>
     
-    <!-- Popups -->
+    <!-- Popup untuk item -->
     <div id="item1" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup('item1')">&times;</span>
-            <img src="fries.png" alt="Kentang Goreng">
+            <img src="images/fries.png" alt="Kentang Goreng">
             <div class="popup-text">
                 <h3>Kentang Goreng</h3>
                 <p>Lezat sekali!</p>
@@ -484,7 +386,17 @@
                 <button class="buy-btn" onclick="buyNow('chicken-nuggets.html')">Beli Sekarang</button>
                 <div id="reviews-item1" class="reviews hidden">
                     <h4>Ulasan</h4>
-                    <p>Ulasan untuk Kentang Goreng: Lezat sekali!</p>
+                    <div class="review-item">
+                        <p><strong>aliyaarjkjd</strong> <span>30/03/2024</span></p>
+                        <p>enak banget kentangnya cuma gitu deh iaihjahdkmnmiuui uhsuwduwdhhjdkjkjahkdkk</p>
+                        <p>⭐ 4.0</p>
+                    </div>
+                    <!-- Form untuk menambah ulasan baru -->
+                    <div class="add-review">
+                        <textarea id="new-review-item1" placeholder="Tulis ulasan Anda..."></textarea>
+                        <input type="number" id="new-rating-item1" min="1" max="5" placeholder="Rating (1-5)">
+                        <button class="submit-review-btn" onclick="submitReview('item1')">Kirim Ulasan</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -493,9 +405,9 @@
     <div id="item2" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup('item2')">&times;</span>
-            <img src="menu-kopi-roti.png" alt="Coffe Breakfast">
+            <img src="images/menu-chicken-katsu-mayo.png" alt="Chicken Katsu Mayo">
             <div class="popup-text">
-                <h3>Coffe Breakfast</h3>
+                <h3>Chicken Katsu Mayo</h3>
                 <p>Lezat sekali!</p>
                 <button class="review-btn" onclick="toggleReviews('item2')">Lihat Ulasan</button>
                 <div class="quantity">
@@ -503,10 +415,20 @@
                     <span id="quantity-item2">1</span>
                     <button class="quantity-btn" onclick="changeQuantity('increase', 'item2')">+</button>
                 </div>
-                <button class="buy-btn" onclick="buyNow('Coffe-breakfast.html')">Beli Sekarang</button>
+                <button class="buy-btn" onclick="buyNow('chicken-katsu-mayo.html')">Beli Sekarang</button>
                 <div id="reviews-item2" class="reviews hidden">
                     <h4>Ulasan</h4>
-                    <p>Ulasan untuk Coffe-breakfast: Lezat sekali!</p>
+                    <div class="review-item">
+                        <p><strong>alOk</strong> <span>30/03/2024</span></p>
+                        <p>enak banget kentangnya cuma gitu deh iaihjahdkmnmiuui uhsuwduwdhhjdkjkjahkdkk</p>
+                        <p>⭐ 4.0</p>
+                    </div>
+                    <!-- Form untuk menambah ulasan baru -->
+                    <div class="add-review">
+                        <textarea id="new-review-item2" placeholder="Tulis ulasan Anda..."></textarea>
+                        <input type="number" id="new-rating-item2" min="1" max="5" placeholder="Rating (1-5)">
+                        <button class="submit-review-btn" onclick="submitReview('item2')">Kirim Ulasan</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -515,20 +437,30 @@
     <div id="item3" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup('item3')">&times;</span>
-            <img src="kopi.png" alt="Coffe">
+            <img src="images/menu-kopi-roti.png" alt="Coffe Breakfast">
             <div class="popup-text">
-                <h3>Coffe </h3>
+                <h3>Coffe Breakfast</h3>
                 <p>Lezat sekali!</p>
                 <button class="review-btn" onclick="toggleReviews('item3')">Lihat Ulasan</button>
                 <div class="quantity">
                     <button class="quantity-btn" onclick="changeQuantity('decrease', 'item3')">-</button>
-                    <span id="quantity-item3">1</span>
+                    <span id="quantity-item2">1</span>
                     <button class="quantity-btn" onclick="changeQuantity('increase', 'item3')">+</button>
                 </div>
-                <button class="buy-btn" onclick="buyNow('coffe.html')">Beli Sekarang</button>
+                <button class="buy-btn" onclick="buyNow('Coffe-breakfast.html')">Beli Sekarang</button>
                 <div id="reviews-item3" class="reviews hidden">
                     <h4>Ulasan</h4>
-                    <p>Ulasan untuk Coffe: Lezat sekali!</p>
+                    <div class="review-item">
+                        <p><strong>alOk tua</strong> <span>30/03/2024</span></p>
+                        <p>enak banget kentangnya cuma gitu deh iaihjahdkmnmiuui uhsuwduwdhhjdkjkjahkdkk</p>
+                        <p>⭐ 4.0</p>
+                    </div>
+                    <!-- Form untuk menambah ulasan baru -->
+                    <div class="add-review">
+                        <textarea id="new-review-item3" placeholder="Tulis ulasan Anda..."></textarea>
+                        <input type="number" id="new-rating-item2" min="1" max="5" placeholder="Rating (1-5)">
+                        <button class="submit-review-btn" onclick="submitReview('item3')">Kirim Ulasan</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -537,9 +469,9 @@
     <div id="item4" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup('item4')">&times;</span>
-            <img src="menu-frozen-dessert.png" alt="Frozen Dessert">
+            <img src="images/kopi.png" alt="Coffe">
             <div class="popup-text">
-                <h3>Frozen Dessert </h3>
+                <h3>Coffe</h3>
                 <p>Lezat sekali!</p>
                 <button class="review-btn" onclick="toggleReviews('item4')">Lihat Ulasan</button>
                 <div class="quantity">
@@ -547,10 +479,20 @@
                     <span id="quantity-item4">1</span>
                     <button class="quantity-btn" onclick="changeQuantity('increase', 'item4')">+</button>
                 </div>
-                <button class="buy-btn" onclick="buyNow('frozen-dessert.html')">Beli Sekarang</button>
+                <button class="buy-btn" onclick="buyNow('coffe.html')">Beli Sekarang</button>
                 <div id="reviews-item4" class="reviews hidden">
                     <h4>Ulasan</h4>
-                    <p>Ulasan untuk Frozen Dessert: Lezat sekali!</p>
+                    <div class="review-item">
+                        <p><strong>alOk</strong> <span>30/03/2024</span></p>
+                        <p>enak banget kentangnya cuma gitu deh iaihjahdkmnmiuui uhsuwduwdhhjdkjkjahkdkk</p>
+                        <p>⭐ 4.0</p>
+                    </div>
+                    <!-- Form untuk menambah ulasan baru -->
+                    <div class="add-review">
+                        <textarea id="new-review-item4" placeholder="Tulis ulasan Anda..."></textarea>
+                        <input type="number" id="new-rating-item2" min="1" max="5" placeholder="Rating (1-5)">
+                        <button class="submit-review-btn" onclick="submitReview('item4')">Kirim Ulasan</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -559,9 +501,9 @@
     <div id="item5" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup('item5')">&times;</span>
-            <img src="menu-chicken-katsu-mayo.png" alt="katsu mayo">
+            <img src="images/menu-frozen-dessert.png" alt="frozen dessert">
             <div class="popup-text">
-                <h3>katsu Mayo </h3>
+                <h3>Frozen Dessert</h3>
                 <p>Lezat sekali!</p>
                 <button class="review-btn" onclick="toggleReviews('item5')">Lihat Ulasan</button>
                 <div class="quantity">
@@ -569,10 +511,20 @@
                     <span id="quantity-item5">1</span>
                     <button class="quantity-btn" onclick="changeQuantity('increase', 'item5')">+</button>
                 </div>
-                <button class="buy-btn" onclick="buyNow('chicken-katsu-mayo.html')">Beli Sekarang</button>
+                <button class="buy-btn" onclick="buyNow('frozen-dessert.html')">Beli Sekarang</button>
                 <div id="reviews-item5" class="reviews hidden">
                     <h4>Ulasan</h4>
-                    <p>Ulasan untuk katsu mayo: Lezat sekali!</p>
+                    <div class="review-item">
+                        <p><strong>alOk</strong> <span>30/03/2024</span></p>
+                        <p>enak banget kentangnya cuma gitu deh iaihjahdkmnmiuui uhsuwduwdhhjdkjkjahkdkk</p>
+                        <p>⭐ 4.0</p>
+                    </div>
+                    <!-- Form untuk menambah ulasan baru -->
+                    <div class="add-review">
+                        <textarea id="new-review-item5" placeholder="Tulis ulasan Anda..."></textarea>
+                        <input type="number" id="new-rating-item2" min="1" max="5" placeholder="Rating (1-5)">
+                        <button class="submit-review-btn" onclick="submitReview('item5')">Kirim Ulasan</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -581,9 +533,9 @@
     <div id="item6" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup('item6')">&times;</span>
-            <img src="menu-lemonade-coffe.png" alt="kopi lemono">
+            <img src="images/menu-lemonade-coffe.png" alt="Chicken Katsu Mayo">
             <div class="popup-text">
-                <h3>Lemonade Coffe </h3>
+                <h3>Lemonade Coffe</h3>
                 <p>Lezat sekali!</p>
                 <button class="review-btn" onclick="toggleReviews('item6')">Lihat Ulasan</button>
                 <div class="quantity">
@@ -594,7 +546,81 @@
                 <button class="buy-btn" onclick="buyNow('lemonade-coffe.html')">Beli Sekarang</button>
                 <div id="reviews-item6" class="reviews hidden">
                     <h4>Ulasan</h4>
-                    <p>Ulasan untuk Lemonade Coffe: Lezat sekali!</p>
+                    <div class="review-item">
+                        <p><strong>Kelly</strong> <span>30/03/2024</span></p>
+                        <p>enak banget kentangnya cuma gitu deh kaya ff</p>
+                        <p>⭐ 4.0</p>
+                    </div>
+                    <!-- Form untuk menambah ulasan baru -->
+                    <div class="add-review">
+                        <textarea id="new-review-item6" placeholder="Tulis ulasan Anda..."></textarea>
+                        <input type="number" id="new-rating-item2" min="1" max="5" placeholder="Rating (1-5)">
+                        <button class="submit-review-btn" onclick="submitReview('item6')">Kirim Ulasan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="item7" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('item7')">&times;</span>
+            <img src="images/gaxlaxy mocktail.png" alt="Chicken Katsu Mayo">
+            <div class="popup-text">
+                <h3>Galaxy Mocktail</h3>
+                <p>Lezat sekali!</p>
+                <button class="review-btn" onclick="toggleReviews('item7')">Lihat Ulasan</button>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="changeQuantity('decrease', 'item7')">-</button>
+                    <span id="quantity-item7">1</span>
+                    <button class="quantity-btn" onclick="changeQuantity('increase', 'item7')">+</button>
+                </div>
+                <button class="buy-btn" onclick="buyNow('galaxy-mocktail.html')">Beli Sekarang</button>
+                <div id="reviews-item7" class="reviews hidden">
+                    <h4>Ulasan</h4>
+                    <div class="review-item">
+                        <p><strong>Bang natan</strong> <span>30/03/2024</span></p>
+                        <p>enak banget mocktail nya unik serasa makan galaaxy</p>
+                        <p>⭐ 4.8</p>
+                    </div>
+                    <!-- Form untuk menambah ulasan baru -->
+                    <div class="add-review">
+                        <textarea id="new-review-item2" placeholder="Tulis ulasan Anda..."></textarea>
+                        <input type="number" id="new-rating-item7" min="1" max="5" placeholder="Rating (1-5)">
+                        <button class="submit-review-btn" onclick="submitReview('item7')">Kirim Ulasan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="item8" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('item8')">&times;</span>
+            <img src="images/milk chocolate.png" alt="Milk Chocolate">
+            <div class="popup-text">
+                <h3>Milk Chocolate</h3>
+                <p>Lezat sekali!</p>
+                <button class="review-btn" onclick="toggleReviews('item8')">Lihat Ulasan</button>
+                <div class="quantity">
+                    <button class="quantity-btn" onclick="changeQuantity('decrease', 'item8')">-</button>
+                    <span id="quantity-item8">1</span>
+                    <button class="quantity-btn" onclick="changeQuantity('increase', 'item8')">+</button>
+                </div>
+                <button class="buy-btn" onclick="buyNow('milk-chocolate.html')">Beli Sekarang</button>
+                <div id="reviews-item8" class="reviews hidden">
+                    <h4>Ulasan</h4>
+                    <div class="review-item">
+                        <p><strong>alOk</strong> <span>30/03/2024</span></p>
+                        <p>enak banget kentangnya cuma gitu deh iaihjahdkmnmiuui uhsuwduwdhhjdkjkjahkdkk</p>
+                        <p>⭐ 4.0</p>
+                    </div>
+                    <!-- Form untuk menambah ulasan baru -->
+                    <div class="add-review">
+                        <textarea id="new-review-item2" placeholder="Tulis ulasan Anda..."></textarea>
+                        <input type="number" id="new-rating-item8" min="1" max="5" placeholder="Rating (1-5)">
+                        <button class="submit-review-btn" onclick="submitReview('item8')">Kirim Ulasan</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -604,12 +630,12 @@
         <div class="footer-content">
             <div class="contact-info">
                 <a href="https://smkn1subang.sch.id">
-                    <img src="globe.png" alt="globe icon" class="globe-icon">  https://smkn1subang.sch.id
+                    <img src="globe.png" alt="Website" class="globe-icon"> https://smkn1subang.sch.id
                 </a>
             </div>
             <div class="social-media">
                 <a href="https://instagram.com/cinema35cafe" target="_blank">
-                    <img src="ikon-ig.png" alt="Instagram Icon" class="instagram-icon"> @cinema35cafe
+                    <img src="ikon-ig.png" alt="Instagram" class="instagram-icon"> @cinema35cafe
                 </a>
             </div>
         </div>
@@ -670,6 +696,24 @@
             // Fungsi untuk membeli sekarang
             window.buyNow = function(productPage) {
                 window.location.href = productPage;
+            };
+
+            // Fungsi untuk mengirim ulasan
+            window.submitReview = function(id) {
+                const newReviewText = document.getElementById(`new-review-${id}`).value;
+                const newRating = document.getElementById(`new-rating-${id}`).value;
+                if (newReviewText && newRating) {
+                    const reviewSection = document.getElementById(`reviews-${id}`);
+                    const newReview = document.createElement('div');
+                    newReview.classList.add('review-item');
+                    const date = new Date().toLocaleDateString();
+                    newReview.innerHTML = `<p><strong>New User</strong> <span>${date}</span></p><p>${newReviewText}</p><p>⭐ ${newRating}</p>`;
+                    reviewSection.insertBefore(newReview, reviewSection.firstChild);
+                    document.getElementById(`new-review-${id}`).value = '';
+                    document.getElementById(`new-rating-${id}`).value = '';
+                } else {
+                    alert('Please enter a review and rating.');
+                }
             };
         });
 
